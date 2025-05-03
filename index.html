@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=0.41, maximum-scale=1" />
+		<meta name="description" content="Intel High Definition Audio">
+		<meta name="keywords" content="Kavya Rathod, UT Austin">
+
+  		<link rel="stylesheet" href="assets/css/styles.css">
+  		<link rel="icon" href="assets/img/favicon.png" >
+		<link rel="shortcut icon" type="assets/img/favicon.png" href="favicon.ico?">
+
+		<link rel="stylesheet" href="https://use.typekit.net/ufg7hqz.css">
+		<link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+
+		<title>Intel High Definition Audio</title>
+
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-153644395-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-153644395-1');
+		</script>
+	</head>
+	<body>
+
+		<!--Navigation Bar-->
+		<div id="nav">
+			<a href="#home-section" class="nav-item right">Intel High Definition Audio</a>
+			<a href="#components-section" class="nav-item left">COMPONENTS</a>
+			<a href="#hda-section" class="nav-item left">INTEL HDA</a>
+			<a href="#about-section" class="nav-item left">ABOUT</a>
+		</div>
+
+		<div class="page-content">
+			
+			<!--Home Page-->
+			<section id="home-section">
+				<div class="container row">
+					<div class="container row" id="landing-container">
+						<img src="assets/img/music.png" id="profile-icon">
+						<div class="container column" id="landing-text">
+							<h1 class="title">Intel High Definition Audio</h1>
+							<p id="app"></p>
+						</div>
+					</div>
+					<a href="#about-section" class="arrow"></a>
+				</div>
+			</section>
+
+			<!--About Section-->
+			<section class ="container column" id="about-section">
+				<h1 class="subtitle">HELLO, WORLD!</h1>
+				
+			</section>
+
+			<!--Intel HDA Project Section-->
+			<section class="container column parallax" id="hda-project-section">
+				<div class="container column" id="text">
+				<h1 class="subtitle">INTEL HDA AUDIO DRIVER</h1>
+				<div class="container row" id="education-title">
+					<img id="logo" src="assets/img/logo.png">
+					<div class="container column" id="school">
+					<h2>TAOS Operating System Project</h2>
+					<h3>Audio Driver Development in Rust</h3>
+					<p>Part of a custom operating system developed at the University of Texas at Austin</p>
+					</div>
+				</div>
+				<div class="container column" id="coursework">
+					<h4>Key Contributions:</h4>
+					<ul>
+					  <li>Designed and implemented a fully operational audio driver conforming to the Intel High Definition Audio (HDA) specification</li>
+					  <li>Developed the capability to parse and play audio directly from WAV files stored in a custom-built</li>
+					  <li>Established robust communication with audio hardware to detect codecs, configure pins, and trace valid playback paths</li>
+					  <li>Built a DMA-based streaming system with optimized memory handling and dual-buffer descriptor list switching for uninterrupted playback</li>
+					  <li>Validated functionality through iterative testing using QEMU-based virtualization and low-level debugging techniques</li>
+					</ul>
+				  </div>
+				  
+				</div>
+			</section>
+  
+  
+
+			<!--Project Section-->
+			<section class="container column" id="components-section">
+				<h1 class="subtitle">COMPONENTS</h1>
+
+				<!--Filter Buttons-->
+				<!-- <div class="contianer row" id="button-section">
+					<button class="filter-button active" onclick="filterSelection('all')">All</button>
+				</div> -->
+
+				<!--Individual Projects-->
+				<div class="container row" id="project-container">
+					<div class="each-project rust">
+						<img class="proj-img" src="assets/img/hda_init.png" />
+						<div class="proj-description container column">
+							<div class="img-description">
+							<h2>HDA Driver Initialization</h2>
+							<p>Set up the Intel High Definition Audio controller from scratch...</p>
+							<a href="javascript:void(0)" onclick="openOverlay('init')">Read More</a>
+
+							<br>
+
+							<!-- Full Detail Content (hidden by default) -->
+							<div class="hda-detail hidden">
+								<hr>
+								<p>This section covers how the Intel HDA controller is initialized from scratch.</p>
+								<ul>
+								<li>Located HDA controller via PCI scan</li>
+								<li>Mapped controller MMIO region</li>
+								<li>Enabled CORB and RIRB DMA engines</li>
+								<li>Reset and probed codecs via verb interface</li>
+								</ul>
+								<a href="javascript:void(0)" onclick="toggleDetail(this)">← Collapse</a>
+							</div>
+							</div>
+						</div>
+					  </div>
+					
+					  <div class="each-project rust">
+						<img class="proj-img" src="assets/img/codec.png" />
+						<div class="proj-description container column">
+						  <div class="img-description">
+							<h2>Codec and Widget Discovery</h2>
+							<p>Probed the audio codec to discover its internal widget structure—pins, DACs, mixers, and converters—and traced signal paths to establish valid audio output routes.</p>
+							<br>
+							<a href="javascript:void(0)" onclick="openOverlay('codec')">Read More</a>
+							<br>
+						  </div>
+						</div>
+					  </div>
+					
+					  <div class="each-project rust">
+						<img class="proj-img" src="assets/img/corb_rirb.png" />
+						<div class="proj-description container column">
+						  <div class="img-description">
+							<h2>Command and Response Handling</h2>
+							<p>Implemented a CORB (Command Output Ring Buffer) and RIRB (Response Input Ring Buffer) system to send standard HDA verbs to the codec and receive responses asynchronously.</p>
+							<br>
+							<a href="javascript:void(0)" onclick="openOverlay('corb')">Read More</a>
+							<br>
+						  </div>
+						</div>
+					  </div>
+					
+					  <div class="each-project rust">
+						<img class="proj-img" src="assets/img/stream.png" />
+						<div class="proj-description container column">
+						  <div class="img-description">
+							<h2>Audio Stream Configuration</h2>
+							<p>Configured playback stream parameters such as buffer size, stream format, sample rate, and channels. Mapped audio output from the codec pin to the DAC and activated the audio engine.</p>
+							<br>
+							<a href="javascript:void(0)" onclick="openOverlay('stream')">Read More</a>
+							<br>
+						  </div>
+						</div>
+					  </div>
+					
+					  <div class="each-project rust">
+						<img class="proj-img" src="assets/img/wav_parsing.png" />
+						<div class="proj-description container column">
+						  <div class="img-description">
+							<h2>WAV File Parsing</h2>
+							<p>Created a custom parser to read WAV audio files from the OS’s EXT2-based file system. Extracted metadata like sample rate and bit depth for dynamic playback configuration.</p>
+							<br>
+							<a href="javascript:void(0)" onclick="openOverlay('wav')">Read More</a>
+							<br>
+						  </div>
+						</div>
+					  </div>
+					
+					  <div class="each-project rust">
+						<img class="proj-img" src="assets/img/playback.png" />
+						<div class="proj-description container column">
+						  <div class="img-description">
+							<h2>DMA-Based Audio Playback</h2>
+							<p>Implemented Direct Memory Access (DMA) streaming using a circular buffer to deliver real-time audio to the hardware. Managed memory ownership and synchronization for smooth playback.</p>
+							<br>
+							<a href="javascript:void(0)" onclick="openOverlay('dma')">Read More</a>
+							<br>
+						  </div>
+						</div>
+					  </div>
+					
+					  <div class="each-project rust">
+						<img class="proj-img" src="assets/img/interrupts.png" />
+						<div class="proj-description container column">
+						  <div class="img-description">
+							<h2>Interrupt Handling</h2>
+							<p>Set up hardware interrupts for stream status updates and implemented a polling fallback mechanism. Enabled real-time feedback during audio streaming through link position tracking.</p>
+							<br>
+							<a href="javascript:void(0)" onclick="openOverlay('interrupt')">Read More</a>
+							<br>
+						  </div>
+						</div>
+					  </div>
+					
+					  <div class="each-project rust">
+						<img class="proj-img" src="assets/img/integration.png" />
+						<div class="proj-description container column">
+						  <div class="img-description">
+							<h2>System Integration & Testing</h2>
+							<p>Integrated the audio driver into a multi-core operating system kernel. Verified functionality using QEMU and conducted waveform playback tests to validate end-to-end audio support.</p>
+							<br>
+							<a href="javascript:void(0)" onclick="openOverlay('integration')">Read More</a>
+							<br>
+						  </div>
+						</div>
+					  </div>
+
+				</div>
+			</section>
+			
+
+
+			<!--Footer/Contact-->
+			<section class="container column" id="footer">
+				<div class="container row" id="social-container">
+				<a href="https://github.com/TAOS-Labs/TAOS" target="_blank">GitHub</a>
+				</div>
+				<div class="container row" id="resource-links">
+				<a href="https://www.intel.com/content/dam/www/public/us/en/documents/product-specifications/high-definition-audio-specification.pdf" target="_blank">Manual</a>
+				<span>•</span>
+				<a href="https://wiki.osdev.org/Intel_High_Definition_Audio#:~:text=10%20External%20links-,Identifying%20HDA%20on%20a%20machine,AMD)%20and%20Device%20ID%204383." target="_blank">OSDev</a>
+				</div>
+
+				<div>
+					<p id="copyright">Website made w/ help from Shruti Patel</p>
+				</div>
+			</section>
+  
+			
+		</div>
+		<script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+		<script src="assets/scripts/scripts.js"></script>
+
+
+	<!-- Fullscreen Overlay for Expanded Project -->
+	<!-- Fullscreen Overlay for Expanded Project -->
+	<div id="project-overlay" class="hidden">
+		<div class="overlay-content">
+		<span class="close-button" onclick="closeOverlay()">×</span>
+		<div id="overlay-inner">
+
+		</div>
+		</div>
+	</div>
+  
+  
+	<script src="assets/scripts/scripts.js"></script>
+	</body>
+</html>
